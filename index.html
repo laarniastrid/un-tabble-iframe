@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    </head>
+    <body ng-controller="iframeNoTab as stopTab">
+        
+        <!-- testing for a locked element in the html that should not be accessible by tabbing -->
+        <a href="#">{{stopTab.test}}</a>
+  
+        <div class="overlay" ng-click="stopTab.stopClick()">
+            <!-- iframe with tabindex -1 so users can't tab through items within the content that is loaded -->
+            <iframe 
+                class="iframe"
+                src="https://app.motivosity.com/home/"
+                frameborder="0"
+                tabindex="-1">
+            </iframe>
+        </div>
+        
+        <a href="#">bottom &ndash; outside of iframe</a>
+
+
+        <!-- scripts for external js files -->
+        <script src="./myApp.js"></script>
+    </body>
+</html>

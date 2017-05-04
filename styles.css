@@ -1,0 +1,14 @@
+/*
+  pointer-events: none
+  need on tabindex -1 element to make sure clickable itmes in the element can't be clicked on
+*/
+.iframe {
+    pointer-events: none;
+    width: 600px;
+    height: 1000px;
+}
+
+.overlay {
+    width: 600px;
+    height: 1000px;
+}
